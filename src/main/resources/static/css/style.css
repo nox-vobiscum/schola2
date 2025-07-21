@@ -1,28 +1,31 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #1e1e1e;
+    color: #d4d4d4;
     margin: 40px;
 }
 
 h1 {
-    color: #2c3e50;
+    color: #569cd6;
 }
 
 button {
-    background-color: #3498db;
-    color: white;
+    background-color: #0e639c;
+    color: #d4d4d4;
     border: none;
     padding: 10px 20px;
     margin: 10px 0;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 1em;
+    transition: background 0.2s;
 }
 
 button:hover {
-    background-color: #2980b9;
+    background-color: #007acc;
 }
 
 p {
     font-size: 1.2em;
-    color: #27ae60;
+    color: #b5cea8;
 }
