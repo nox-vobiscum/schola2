@@ -7,9 +7,9 @@
 <body>
     <h1>RBS first steps - Java Edition</h1>
 
-    <form method="post" action="/button-a" th:if="${!showButtonB}">
+    <form method="post" action="/button-a" th:if="${!showButtonB and !showMessage}">
         <button type="submit">Klickstu!</button>
-        </form>
+    </form>
 
     <form method="post" action="/button-b" th:if="${showButtonB and !showMessage}">
         <button type="submit">Klickstu nochmal!</button>
