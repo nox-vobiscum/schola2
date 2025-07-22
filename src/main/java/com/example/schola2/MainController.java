@@ -7,19 +7,15 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class MainController {
 
-    private boolean buttonBVisible = false;
-    private boolean messageVisible = false;
-
     @GetMapping("/")
     public String index(Model model) {
-        model.addAttribute("showButtonB", buttonBVisible);
-        model.addAttribute("showMessage", messageVisible);
+        model.addAttribute("showButtonB", false);
+        model.addAttribute("showMessage", false);
         return "index";
     }
 
     @PostMapping("/button-a")
     public String buttonAClicked(Model model) {
-        buttonBVisible = true;
         model.addAttribute("showButtonB", true);
         model.addAttribute("showMessage", false);
         return "index";
@@ -27,8 +23,7 @@ public class MainController {
 
     @PostMapping("/button-b")
     public String buttonBClicked(Model model) {
-        messageVisible = true;
-        model.addAttribute("showButtonB", true);
+        model.addAttribute("showButtonB", false);
         model.addAttribute("showMessage", true);
         return "index";
     }
