@@ -25,7 +25,7 @@ public class MainController {
 
     @PostMapping("/button-b")
     public String buttonBClicked(Model model) {
-        // Nach Klick auf Button B: Nachricht anzeigen
+        // Nach Klick auf Button B: Nachricht anzeigen, beide Buttons ausblenden
         model.addAttribute("showButtonB", false);
         model.addAttribute("showMessage", true);
         return "index";

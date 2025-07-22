@@ -1,20 +1,29 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
-    <title>RBS Sandbox App - Java Edition</title>
-    <link rel="stylesheet" th:href="@{/css/style.css}" href="/css/style.css" />
+    <title>RBS Sandbox App - JavaScript Edition</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script>
+        function showButtonB() {
+            document.getElementById('button-a').style.display = 'none';
+            document.getElementById('button-b').style.display = 'block';
+        }
+        function showMessage() {
+            document.getElementById('button-b').style.display = 'none';
+            document.getElementById('message').style.display = 'block';
+        }
+        window.onload = function() {
+            document.getElementById('button-a').style.display = 'block';
+            document.getElementById('button-b').style.display = 'none';
+            document.getElementById('message').style.display = 'none';
+        }
+    </script>
 </head>
 <body>
-    <h1>RBS first steps - Java Edition</h1>
+    <h1>RBS first steps - JavaScript Edition</h1>
 
-    <form method="post" action="/button-a" th:if="${!showButtonB and !showMessage}">
-        <button type="submit">Klickstu!</button>
-    </form>
-
-    <form method="post" action="/button-b" th:if="${showButtonB and !showMessage}">
-        <button type="submit">Klickstu nochmal!</button>
-    </form>
-
-    <p th:if="${showMessage}">Na geht doch! 🎉</p>
+    <button id="button-a" onclick="showButtonB()">Klickstu!</button>
+    <button id="button-b" onclick="showMessage()">Klickstu nochmal!</button>
+    <p id="message">Na geht doch! 🎉</p>
 </body>
 </html>
